@@ -1,7 +1,7 @@
 !function(){
 	var bP={};	
 	var b=30, bb=150, height=600, buffMargin=1, minHeight=14;
-	var c1=[-130, 40], c2=[-50, 100], c3=[-10, 140]; //Column positions of labels.
+	var c1=[-150, 40], c2=[-50, 170], c3=[-10, 240]; //Column positions of labels.
 	var colors =["#3366CC", "#DC3912",  "#FF9900","#109618", "#990099", "#0099C6"];
 	
 	bP.partData = function(data,p){
@@ -158,10 +158,10 @@
 		[0,1].forEach(function(d){
 			var h = d3.select("#"+id).select(".part"+d).append("g").attr("class","header");
 			
-			h.append("text").text(header[d]).attr("x", (c1[d]-5))
+			h.append("text").text(header[d]).attr("x", (c1[d]+5))
 				.attr("y", -5).style("fill","grey");
 			
-			h.append("text").text("Count").attr("x", (c2[d]-10))
+			h.append("text").text("通信量(MByte)").attr("x", (c2[d]-25))
 				.attr("y", -5).style("fill","grey");
 			
 			h.append("line").attr("x1",c1[d]-10).attr("y1", -2)
